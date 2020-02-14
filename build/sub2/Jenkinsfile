@@ -1,0 +1,20 @@
+def t
+
+pipeline {
+	agent {
+		label 'codebuild-small'
+	}
+
+	stages {
+		stage('Test') {
+			steps {
+				script {
+					t = load "build/lib/testit.groovy"
+				}
+				script {
+					t.test()
+				}
+			}
+		}
+	}
+}
