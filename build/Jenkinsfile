@@ -8,7 +8,9 @@ pipeline {
 	stages {
 		stage('Test') {
 			steps {
-				t = load "lib/testit.groovy"
+				script {
+					t = load "lib/testit.groovy"
+				}
 				t.test()
 			}
 		}
