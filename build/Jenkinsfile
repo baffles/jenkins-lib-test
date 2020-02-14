@@ -5,10 +5,12 @@ pipeline {
 		label 'codebuild-small'
 	}
 
-	stages('Test') {
-		steps {
-			t = load "lib/testit.groovy"
-			t.test()
+	stages {
+		stage('Test') {
+			steps {
+				t = load "lib/testit.groovy"
+				t.test()
+			}
 		}
 	}
 }
