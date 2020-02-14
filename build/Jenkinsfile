@@ -11,7 +11,9 @@ pipeline {
 				script {
 					t = load "lib/testit.groovy"
 				}
-				t.test()
+				script {
+					t.test()
+				}
 			}
 		}
 	}
